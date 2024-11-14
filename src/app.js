@@ -12,9 +12,9 @@ app.use(cors());
 app.use(express.json());
 
 // 라우트 설정
-app.use('/students', studentRoutes);
-app.use('/exercises', exerciseRoutes);
-app.use('/exercise-records', exerciseRecordRoutes);
+app.use('/api/students', studentRoutes);
+app.use('/api/exercises', exerciseRoutes);
+app.use('/api/exercise-records', exerciseRecordRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {

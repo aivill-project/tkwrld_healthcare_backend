@@ -12,10 +12,10 @@ class ExerciseModel {
   }
 
   async createExercise(exerciseData) {
-    const { name, description } = exerciseData;
+    const { name, category } = exerciseData;
     const [result] = await pool.query(
-      'INSERT INTO exercises (name, description) VALUES (?, ?)',
-      [name, description]
+      'INSERT INTO exercises (name, category) VALUES (?, ?)',
+      [name, category]
     );
     return result.insertId;
   }
