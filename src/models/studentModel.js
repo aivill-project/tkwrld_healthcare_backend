@@ -12,19 +12,19 @@ class StudentModel {
   }
 
   async createStudent(studentData) {
-    const { name, age, profile_image } = studentData;
+    const { name, grade, profile_image, school_type } = studentData;
     const [result] = await pool.query(
-      'INSERT INTO students (name, age, profile_image) VALUES (?, ?, ?)',
-      [name, age, profile_image]
+      'INSERT INTO students (name, grade, profile_image, school_type) VALUES (?, ?, ?, ?)',
+      [name, grade, profile_image, school_type]
     );
     return result.insertId;
   }
 
   async updateStudent(studentId, studentData) {
-    const { name, age, profile_image } = studentData;
+    const { name, grade, profile_image, school_type } = studentData;
     const [result] = await pool.query(
-      'UPDATE students SET name = ?, age = ?, profile_image = ? WHERE student_id = ?',
-      [name, age, profile_image, studentId]
+      'UPDATE students SET name = ?, grade = ?, profile_image = ?, school_type = ? WHERE student_id = ?',
+      [name, grade, profile_image, school_type, studentId]
     );
     return result.affectedRows > 0;
   }

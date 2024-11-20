@@ -7,7 +7,7 @@ async function initializeDatabase() {
       CREATE TABLE IF NOT EXISTS students (
         student_id INT PRIMARY KEY AUTO_INCREMENT,
         name VARCHAR(100) NOT NULL,
-        age INT,
+        grade INT,
         profile_image VARCHAR(255),
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
