@@ -35,7 +35,7 @@ ${JSON.stringify(exerciseHistory, null, 2)}
         messages: [{ role: "user", content: prompt }],
         model: "gpt-4o-mini",
         temperature: 0.7,
-        max_tokens: 500
+        max_tokens: 1000
       });
 
       res.json({
